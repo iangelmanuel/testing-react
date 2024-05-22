@@ -11,7 +11,12 @@ type FormProviderProps = {
   children: React.ReactNode
 }
 
-export const FormContext = createContext({} as FormContextType)
+const initalContext: FormContextType = {
+  state: initialState,
+  dispatch: () => null,
+}
+
+export const FormContext = createContext(initalContext)
 
 export default function FormProvider({ children }: FormProviderProps) {
   const [state, dispatch] = useReducer(FormReducer, initialState)

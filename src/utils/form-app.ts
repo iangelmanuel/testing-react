@@ -53,6 +53,6 @@ export function FormApp(): FormAppReturn {
     name,
     checkName,
     handleSubmit,
-    handleClick
+    handleClick,
   }
 }

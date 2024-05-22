@@ -1,13 +1,13 @@
 export type FormActions =
-  { type: 'set-name', payload: FormDataEntryValue | null } |
-  { type: 'clear-name-state' }
+  | { type: 'set-name'; payload: FormDataEntryValue | null }
+  | { type: 'clear-name-state' }
 
 export type FormState = {
   name: FormDataEntryValue | null
 }
 
 export const initialState: FormState = {
-  name: ''
+  name: '',
 }
 
 export function FormReducer(state: FormState, action: FormActions) {
@@ -15,13 +15,13 @@ export function FormReducer(state: FormState, action: FormActions) {
     case 'set-name':
       return {
         ...state,
-        name: action.payload
+        name: action.payload,
       }
 
     case 'clear-name-state':
       return {
         ...state,
-        name: null
+        name: null,
       }
 
     default:
